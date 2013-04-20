@@ -147,28 +147,9 @@ close($goblas);
 sub process {
 	my $line = shift;
 	chomp $line;
-	if ($line =~ m/^enum/) {
-		#processEnum($line);
-	} else {
+	if (not $line =~ m/^enum/) {
 		processProto($line);
 	}
-}
-
-sub processEnum {
-	my $enum = shift;
-	my ($type, $vals) = (split ' ', $enum)[1, 2];
-	$type = (split '_', $type)[1];
-	$type = ucfirst lc $type;
-	print $goblas "type $type int\n\n";
-	$vals = substr($vals, 1);
-	chop $vals;
-	print $goblas "const (\n";
-	foreach my $val (split ',', $vals) {
-		next if $excludeAtlas && $val =~ m/atlas/i;
-		$val =~ s/=/ $type = /g;
-		print $goblas "\t$val\n";
-	}
-	print $goblas ")\n\n";
 }
 
 sub processProto {
