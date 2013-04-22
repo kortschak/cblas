@@ -331,7 +331,7 @@ void cblas_ssyr2(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 const int lda);
 void cblas_sspr2(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 const int N, const float alpha, const float *X,
-                const int incX, const float *Y, const int incY, float *A);
+                const int incX, const float *Y, const int incY, float *Ap);
 
 void cblas_dsymv(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                  const int N, const double alpha, const double *A,
@@ -360,7 +360,7 @@ void cblas_dsyr2(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 const int lda);
 void cblas_dspr2(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 const int N, const double alpha, const double *X,
-                const int incX, const double *Y, const int incY, double *A);
+                const int incX, const double *Y, const int incY, double *Ap);
 
 
 /*
@@ -389,7 +389,7 @@ void cblas_cher(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 void *A, const int lda);
 void cblas_chpr(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 const int N, const float alpha, const void *X,
-                const int incX, void *A);
+                const int incX, void *Ap);
 void cblas_cher2(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo, const int N,
                 const void *alpha, const void *X, const int incX,
                 const void *Y, const int incY, void *A, const int lda);
@@ -420,7 +420,7 @@ void cblas_zher(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 void *A, const int lda);
 void cblas_zhpr(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo,
                 const int N, const double alpha, const void *X,
-                const int incX, void *A);
+                const int incX, void *Ap);
 void cblas_zher2(const enum CBLAS_ORDER Order, const enum CBLAS_UPLO Uplo, const int N,
                 const void *alpha, const void *X, const int incX,
                 const void *Y, const int incY, void *A, const int lda);
