@@ -15,7 +15,7 @@ package cblas
 import "C"
 
 import (
-	"github.com/kortschak/blas"
+	"github.com/gonum/blas"
 	"unsafe"
 )
 
